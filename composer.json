@@ -1,0 +1,15 @@
+{
+    "name": "elementsframework/dynamic-routing",
+    "description": "This package provides the implementation for loading different types of routes from the database.",
+    "type": "library",
+    "require": {
+        "laravel/laravel": "5.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Rinkovec",
+            "email": "igor.rinkovec+elements@gmail.com"
+        }
+    ]
+}
