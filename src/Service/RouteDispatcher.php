@@ -4,14 +4,12 @@
 namespace ElementsFramework\DynamicRouting\Controller;
 
 use ElementsFramework\DynamicRouting\Exception\HandlerNotFoundException;
-use ElementsFramework\DynamicRouting\Handler\AbstractRouteTypeHandler;
 use ElementsFramework\DynamicRouting\Model\DynamicRoute;
+use ElementsFramework\DynamicRouting\Service\RouteHandlerResolver;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Routing\Controller as BaseController;
-use ReflectionClass;
 
-class RouteActionResolverController extends BaseController
+class RouteDispatcher
 {
     /**
      * RouteActionResolverController constructor.
@@ -31,14 +29,6 @@ class RouteActionResolverController extends BaseController
      */
     public function dispatchRouteToHandler(Request $request, DynamicRoute $route)
     {
-        foreach(config('dynamic-routing.handlers') as $handlerClass) {
-            $handlerMetadata = new ReflectionClass($handlerClass);
-            if($route->handler == $handlerMetadata->getShortName()) {
-                /** @var AbstractRouteTypeHandler $handler */
-                $handler = new $handlerClass();
-                return $handler->process($request, $route);
-            }
-        }
-        throw HandlerNotFoundException::fromIdentifier($route->handler);
+        return RouteHandlerResolver::getInstance($route->handler)->process($request);
     }
 }

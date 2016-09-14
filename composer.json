@@ -3,7 +3,7 @@
     "description": "This package provides the implementation for loading different types of routes from the database.",
     "type": "library",
     "require": {
-        "laravel/laravel": "5.*"
+        "laravel/laravel": "5.3.*"
     },
     "license": "MIT",
     "authors": [

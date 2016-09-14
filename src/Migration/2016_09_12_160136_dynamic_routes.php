@@ -15,10 +15,11 @@ class DynamicRoutes extends Migration
     {
         Schema::create('dynamic_routes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('pattern');
-            $table->string('handler');
-            $table->string('configuration');
+            $table->string('method', 8);
+            $table->text('name');
+            $table->text('pattern');
+            $table->text('handler');
+            $table->text('configuration');
             $table->timestamps();
         });
     }

@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     /**
      * Middleware Group
      *
@@ -19,6 +20,17 @@ return [
      * route handlers which have to be added here.
      */
     'handlers' => [
-
+        \ElementsFramework\DynamicRouting\Handler\ControllerActionRouteHandler::class,
+        \ElementsFramework\DynamicRouting\Handler\RedirectRouteHandler::class,
     ],
+
+    /**
+     * Compiled Routes Path
+     *
+     * Path in which dynamic routes will be compiled and saved when you run
+     * the compilation step or compile them in-code.
+     *
+     * Default: 'routes/dynamic.php'
+     */
+    'compiled-routes-path' => 'routes/dynamic.php',
 ];
