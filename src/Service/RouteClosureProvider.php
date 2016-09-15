@@ -23,4 +23,13 @@ class RouteClosureProvider
         };
     }
 
+    /**
+     * @param $routeId
+     * @return \Closure
+     */
+    public static function forRouteId($routeId)
+    {
+        return self::forRoute(Route::find($routeId));
+    }
+
 }

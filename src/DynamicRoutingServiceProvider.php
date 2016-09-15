@@ -31,7 +31,15 @@ class DynamicRoutingServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Commands
+        $this->commands([
+            Console\CompileRoutesCommand::class,
+        ]);
+
+        // Services
+        $this->app->bind('ElementsFramework\DynamicRouting\Service\Compiler\RouteDeclarationCompiler', function($app) {
+            return new Service\Compiler\RouteDeclarationCompiler();
+        });
     }
 
 }

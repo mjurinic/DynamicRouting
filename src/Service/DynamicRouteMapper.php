@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ElementsFramework\DynamicRouting\Controller;
+namespace ElementsFramework\DynamicRouting\Service;
 
 
 use Illuminate\Support\Facades\Route;
