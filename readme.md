@@ -9,8 +9,6 @@ This package allows for registering dynamic routes served from the database. Suc
 
 ### ToDo:
 
-- Route compilation:
-    - Service
-    - Console comand
-    - Component route publishing - letting components push new routes, keeping valid edits and pruning the deprecated routes
+- Documentation
+- Unit tests
 
