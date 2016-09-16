@@ -6,7 +6,6 @@ namespace ElementsFramework\DynamicRouting\Service\Compiler;
 
 use ElementsFramework\DynamicRouting\Model\DynamicRoute;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 /**
  * Class RouteDeclarationCompiler
@@ -35,8 +34,14 @@ class RouteDeclarationCompiler
         $routes = DynamicRoute::all();
 
         $output = "";
+        if(!empty(config('dynamic-routing.middleware-group'))) {
+            $output .= "Route::group(['middleware' => '".config('dynamic-routing.middleware-group')."'], function () {" . PHP_EOL;
+        }
         foreach($routes as $route) {
             $output .= $this->compileRoute($route) . PHP_EOL;
+        }
+        if(!empty(config('dynamic-routing.middleware-group'))) {
+            $output .= "});" . PHP_EOL;
         }
 
         return $output;

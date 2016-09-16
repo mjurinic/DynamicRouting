@@ -20,6 +20,7 @@ class DynamicRoutes extends Migration
             $table->text('pattern');
             $table->text('handler');
             $table->text('configuration');
+            $table->boolean('userspace')->default(true);
             $table->timestamps();
         });
     }

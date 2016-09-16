@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ElementsFramework\DynamicRouting\Controller;
+namespace ElementsFramework\DynamicRouting\Service;
 
 use ElementsFramework\DynamicRouting\Exception\HandlerNotFoundException;
 use ElementsFramework\DynamicRouting\Model\DynamicRoute;
@@ -12,14 +12,6 @@ use Illuminate\Http\Response;
 class RouteDispatcher
 {
     /**
-     * RouteActionResolverController constructor.
-     */
-    public function __construct()
-    {
-        $this->middleware(config('dynamic-routing.middleware-group'));
-    }
-
-    /**
      * Finds the needed handler from the registered handlers list and processes the
      * requests within the handler.
      * @param Request $request
@@ -29,6 +21,6 @@ class RouteDispatcher
      */
     public function dispatchRouteToHandler(Request $request, DynamicRoute $route)
     {
-        return RouteHandlerResolver::getInstance($route->handler)->process($request);
+        return RouteHandlerResolver::getInstance($route->handler)->process($request, $route);
     }
 }

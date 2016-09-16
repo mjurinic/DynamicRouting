@@ -4,42 +4,42 @@
 namespace ElementsFramework\DynamicRouting\Console;
 
 
-use ElementsFramework\DynamicRouting\Service\Compiler\RouteDeclarationCompiler;
+use ElementsFramework\DynamicRouting\Service\Publishing\RoutePublisher;
 use Illuminate\Console\Command;
 
-class CompileRoutesCommand extends Command
+class SyncProvidedRoutesCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'dynamic-route:compile';
+    protected $signature = 'dynamic-route:provided:sync';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Compiles all dynamic routes to a static file.';
+    protected $description = 'Runs the publish and cleanup command in one go.';
 
     /**
      * The route compiler
      *
      * @var RouteDeclarationCompiler
      */
-    protected $compiler;
+    protected $publisher;
 
     /**
      * Create a new command instance.
      *
-     * @param RouteDeclarationCompiler $compiler
+     * @param RoutePublisher $publisher
      */
-    public function __construct(RouteDeclarationCompiler $compiler)
+    public function __construct(RoutePublisher $publisher)
     {
         parent::__construct();
 
-        $this->compiler = $compiler;
+        $this->publisher = $publisher;
     }
 
     /**
@@ -49,7 +49,7 @@ class CompileRoutesCommand extends Command
      */
     public function handle()
     {
-        $this->output->writeln('<info>Compiling dynamic routes...</info>');
-        $this->compiler->compileToFile();
+        $this->call('dynamic-route:provided:publish');
+        $this->call('dynamic-route:provided:cleanup');
     }
 }

@@ -25,6 +25,17 @@ return [
     ],
 
     /**
+     * Route Providers
+     *
+     * Defines all dynamic route providers. These are usually provided by Elements
+     * components and handle registering of the required routes for that component
+     * to function correctly.
+     */
+    'route-providers' => [
+
+    ],
+
+    /**
      * Compiled Routes Path
      *
      * Path in which dynamic routes will be compiled and saved when you run

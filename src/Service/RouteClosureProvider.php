@@ -4,7 +4,6 @@
 namespace ElementsFramework\DynamicRouting\Service;
 
 
-use ElementsFramework\DynamicRouting\Controller\RouteDispatcher;
 use ElementsFramework\DynamicRouting\Model\DynamicRoute;
 use Illuminate\Http\Request;
 
@@ -29,7 +28,7 @@ class RouteClosureProvider
      */
     public static function forRouteId($routeId)
     {
-        return self::forRoute(Route::find($routeId));
+        return self::forRoute(DynamicRoute::find($routeId));
     }
 
 }
