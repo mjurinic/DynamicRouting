@@ -68,12 +68,12 @@ class RoutePublisher
             }
         }
 
-        $deletableRoutes = $existingRoutes;
-        foreach($deletableRoutes as $route) {
+        $deletedRoutes = $existingRoutes;
+        foreach($existingRoutes as $route) {
             $route->delete();
         }
 
-        return $existingRoutes;
+        return $deletedRoutes;
     }
 
     /**

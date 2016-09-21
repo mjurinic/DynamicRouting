@@ -1,8 +1,10 @@
 # Laravel Dynamic Routing
 
-![](https://img.shields.io/packagist/v/elementsframework/dynamic-routing.svg)
-![](https://img.shields.io/packagist/dt/elementsframework/dynamic-routing.svg)
+[![Build Status](https://travis-ci.org/ElementsFramework/DynamicRouting.svg?branch=master)](https://travis-ci.org/ElementsFramework/DynamicRouting)
+[![codecov](https://codecov.io/gh/ElementsFramework/DynamicRouting/branch/master/graph/badge.svg)](https://codecov.io/gh/ElementsFramework/DynamicRouting)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ElementsFramework/DynamicRouting/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ElementsFramework/DynamicRouting/?branch=master)
+![](https://img.shields.io/packagist/dt/elementsframework/dynamic-routing.svg)
+![](https://img.shields.io/packagist/v/elementsframework/dynamic-routing.svg)
 
 **Supported Laravel version: 5.3**
 

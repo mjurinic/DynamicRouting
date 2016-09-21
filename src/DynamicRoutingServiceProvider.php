@@ -22,6 +22,9 @@ class DynamicRoutingServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/Configuration/dynamic-routing.php' => config_path('dynamic-routing.php'),
         ]);
+        $this->mergeConfigFrom(
+            __DIR__.'/Configuration/dynamic-routing.php', 'dynamic-routing'
+        );
     }
 
     /**

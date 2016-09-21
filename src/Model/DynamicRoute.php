@@ -34,8 +34,7 @@ class DynamicRoute extends Model
         'method' => ['required'],
         'name' => ['required'],
         'pattern' => ['required'],
-        'handler' => ['required'],
-        'configuration' => ['required']
+        'handler' => ['required']
     ];
 
     /**
