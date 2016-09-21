@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Redirect;
 
-class RedirectRouteHandler extends AbstractRouteTypeHandler
+class RedirectRouteHandler implements AbstractRouteTypeHandler
 {
 
     /**

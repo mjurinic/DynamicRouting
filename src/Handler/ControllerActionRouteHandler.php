@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
 
-class ControllerActionRouteHandler extends AbstractRouteTypeHandler
+class ControllerActionRouteHandler implements AbstractRouteTypeHandler
 {
 
     /**
