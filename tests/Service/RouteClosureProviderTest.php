@@ -14,7 +14,7 @@ class RouteClosureProviderTest extends BaseTest
 
     public function testGetClosureById()
     {
-        DynamicRoute::create([
+        $dynamicRoute = DynamicRoute::create([
             'method' => 'get',
             'name' => 'test',
             'pattern' => '/test',
@@ -22,6 +22,7 @@ class RouteClosureProviderTest extends BaseTest
             'configuration' => ['target' => '/'],
         ]);
 
+        $this->assertInstanceOf(Closure::class, RouteClosureProvider::forRoute($dynamicRoute));
         $this->assertInstanceOf(Closure::class, RouteClosureProvider::forRouteId(1));
     }
 
