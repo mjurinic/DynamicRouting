@@ -23,6 +23,7 @@ class RouteClosureProviderTest extends BaseTest
         ]);
 
         $this->assertInstanceOf(Closure::class, RouteClosureProvider::forRoute($dynamicRoute));
+
         $this->assertInstanceOf(Closure::class, RouteClosureProvider::forRouteId(1));
     }
 
